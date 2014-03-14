@@ -12,7 +12,8 @@
 void error_exit_1(const char* fmt, const char* msg1);
 void error_exit_2(const char* fmt, const char* msg1, const char* msg2);
 
-int read_file(char* file, int * buffer, int n)
+int 
+read_file(char* file, int * buffer, int n)
 {
 
     int fd;
