@@ -1,4 +1,4 @@
-2/*******************************************************************
+/*******************************************************************
 * sort_routines.c - Various sort routines
 * Args:         arg1: buffer to sort in place
 *               arg2: size of buffer
