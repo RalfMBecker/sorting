@@ -1,4 +1,4 @@
-Implementation of some sort routines. Algorithms based on Cormen alt.,
+Implementation of some sort routines. Algorithms based on Cormen et alt.,
 with counting adjusted for 0-based arrays.
 
 The algorithms come with helper functions to create arrays of integers:

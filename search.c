@@ -26,7 +26,8 @@ int search_lin(int, int*, int);
 int search_binary(int, int*, int);
 void search_binary_rec(int*, int, int*, int, int);
 
-int main(int argc, char** argv)
+int 
+main(int argc, char** argv)
 {
     int v, n, i;
     int* i_ptr = &i;

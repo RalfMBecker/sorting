@@ -1,4 +1,4 @@
-/*******************************************************************
+2/*******************************************************************
 * sort_routines.c - Various sort routines
 * Args:         arg1: buffer to sort in place
 *               arg2: size of buffer
@@ -14,7 +14,8 @@
 #include <string.h>
 #include <math.h>
 
-int sort_insertion(int* A, int n)
+int 
+sort_insertion(int* A, int n)
 {
     int key, i, j;
     if (n <= 1)
@@ -32,7 +33,8 @@ int sort_insertion(int* A, int n)
     return 0;
 }
 
-void sort_selection(int* A, int n)
+void 
+sort_selection(int* A, int n)
 {
     int i, j, min, min_i;
 
@@ -51,7 +53,8 @@ void sort_selection(int* A, int n)
 }
 
 // merge sort procedures
-void merge(int* A, int p, int q, int r)
+void 
+merge(int* A, int p, int q, int r)
 {
     int n_L, n_R, i, j, k;
 
@@ -75,7 +78,8 @@ void merge(int* A, int p, int q, int r)
 	A[k++] = R[j++];
 }
 
-void sort_merge(int* A, int p, int r)
+void 
+sort_merge(int* A, int p, int r)
 {
     int q;
 

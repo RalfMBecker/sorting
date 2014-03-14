@@ -29,7 +29,8 @@ void sort_selection(int* buff, int n);
 void sort_merge(int*, int, int); 
 void sort_heap(int* A, int sizeA);
 
-int main(int argc, char** argv)
+int 
+main(int argc, char** argv)
 {
     int n;
     int* buff_ptr; 
@@ -108,7 +109,8 @@ int main(int argc, char** argv)
     exit(EXIT_SUCCESS);
 }
 
-void print_sorted(int* buffer, int n)
+void 
+print_sorted(int* buffer, int n)
 {
     int i;
     for (i = 0; i < n; i++){

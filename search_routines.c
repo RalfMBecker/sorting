@@ -4,7 +4,8 @@
 
 #include <stdio.h>
 
-int search_lin(int v, int* A, int n)
+int 
+search_lin(int v, int* A, int n)
 {
     int i;
     for (i = 0; i < n; i++){
@@ -15,7 +16,8 @@ int search_lin(int v, int* A, int n)
     return -1;
 }
 
-int search_binary(int v, int* A, int n)
+int 
+search_binary(int v, int* A, int n)
 {
     int low, mid, high;
     low = 0;
@@ -35,7 +37,8 @@ int search_binary(int v, int* A, int n)
 }
 
 // note that for 0-based array, high = n-1
-void search_binary_rec(int* r, int v, int* A, int low, int high)
+void 
+search_binary_rec(int* r, int v, int* A, int low, int high)
 {
   int mid;
 
