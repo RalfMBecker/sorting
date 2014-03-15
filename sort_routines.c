@@ -6,6 +6,7 @@
 *               Selection sort (n)
 *               Merge sort (n-1)
 *               Heap sort (n)
+*               Quicksort (n-1)
 * Note: size sometimes is number of elements, sometimes last array 
 *       element. Not good; for production, should choose one. 
 *       See above for what is used for which algorithm.
@@ -117,7 +118,8 @@ rightChild(int i)
     return 2*(i + 1);
 }
 
-void // we skip bound check
+// we skip bound check
+void
 swap(int* A, int i, int j)
 {
     int tmp;
@@ -168,3 +170,21 @@ sort_heap(int* A, int sizeA)
 	maxHeapify(A, heapSizeA, 0);
     }
 } 
+
+// straight from K&R
+void 
+sort_qsort(int v[], int left, int right)
+{
+    int i, last;
+
+    if (left >= right)
+        return;
+    swap(v, left, (left + right) / 2);
+    last = left;
+    for (i = left+1; i <= right; i++)
+        if (v[i] < v[left])
+            swap(v, ++last, i);
+    swap(v, left, last);
+    sort_qsort(v, left, last-1);
+    sort_qsort(v, last+1, right);
+}

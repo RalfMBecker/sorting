@@ -7,6 +7,7 @@
 *                 sort_selection
 *                 sort_merge
 *                 sort_heap
+*                 sort_qsort
 * Compile with:   read_file.c
 *                 error.c
 *                 sort_routines.c
@@ -28,6 +29,7 @@ int sort_insertion(int* buff, int n);
 void sort_selection(int* buff, int n);
 void sort_merge(int*, int, int); 
 void sort_heap(int* A, int sizeA);
+void sort_qsort(int v[], int left, int right);
 
 int 
 main(int argc, char** argv)
@@ -98,6 +100,19 @@ main(int argc, char** argv)
     clock_gettime(CLOCK_MONOTONIC_RAW, tspec_ptr);
     sec_1 = tspec.tv_sec, nano_1 = tspec.tv_nsec;
     sort_heap(sorted_ptr, n);
+    clock_gettime(CLOCK_MONOTONIC_RAW, tspec_ptr);
+    sec_2 = tspec.tv_sec, nano_2 = tspec.tv_nsec;
+    // print_sorted(sorted_ptr, n);
+    delta = (nano_2 - nano_1)/1000000.0;
+    delta = (delta >= 0)?delta:-delta;
+    delta += (sec_2 - sec_1)/100.0;
+    printf("\nHeap sort took %g micro seconds.\n", (double) delta);
+
+    // merge sort
+    memcpy(sorted_ptr, buff_ptr, n*sizeof(int));
+    clock_gettime(CLOCK_MONOTONIC_RAW, tspec_ptr);
+    sec_1 = tspec.tv_sec, nano_1 = tspec.tv_nsec;
+    sort_qsort(sorted_ptr, 0, n-1);
     clock_gettime(CLOCK_MONOTONIC_RAW, tspec_ptr);
     sec_2 = tspec.tv_sec, nano_2 = tspec.tv_nsec;
     // print_sorted(sorted_ptr, n);
